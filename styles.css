@@ -4,8 +4,13 @@
     --Gray500: hsl(0, 0%, 42%);
     --Gray950: hsl(0, 0%, 7%);
     --accent: hsl(228deg 45% 44%);
-}
-
+    
+    /* Shared card width value */
+    --card-width: clamp(200px, 80vw, 400px);
+  
+    /* Scale font relative to width range */
+    --font-size: calc(12px + (var(--card-width) - 200px) * 0.05);
+  }
 
 body {
     background-color: var(--Yellow);
@@ -14,15 +19,16 @@ body {
     justify-content: center;
     align-items: center;
     font-family: figtree;
-    font-size: 14.4px;
+    font-size: 16px;
     min-height: 100vh;
 }
 
 .card {
     display: flex;
     flex-direction: column;
-    width: 17.5rem; 
-    padding: 1.4rem; 
+    width: var(--card-width);
+    font-size: var(--font-size);
+    padding: 1.4em; 
     border-radius: 20px;
     box-shadow: 9px 9px 0px var(--Gray950);
     background-color: var(--White);
@@ -30,42 +36,41 @@ body {
 }
 
 .card-image {
-    width: 100%;
-    height: 12.5rem;
+    width: clamp(200px, 80vw, 400px);  
+    height: 200px;                     
     object-fit: cover;
     object-position: center;
-    border-radius: 10.8px;
-    margin-bottom: 1.53rem;
-}   
+    border-radius: 0.675em;
+    margin-bottom: 1.53em;
+}
 
 .topic > span {
     display: inline-block;
     background-color: var(--Yellow);
     border-radius: 5px;
-    padding: 0.35rem 0.8rem;
-    font-size: 0.75rem;
+    padding: 0.35em 0.8em;
+    font-size: 0.75em;
     font-weight: 800;
-    margin-bottom: 0.85rem;
+    margin-bottom: 0.85em;
 }
 
 .date {
-    font-size: 0.75rem;
-    margin-bottom: 1rem;
+    font-size: 0.75em;
+    margin-bottom: 1em;
 }
 
-header > *{
+header > * {
     margin: 0;
-    font-size: 1.25rem;
-    margin-bottom: 1rem;
+    font-size: 1.25em;
+    margin-bottom: 1em;
 }
 
 p {
-    font-size: 0.85rem;
+    font-size: 0.85em;
     line-height: 1.5;
     color: var(--Gray500);
     margin: 0;
-    margin-bottom: 1.5rem;
-
+    margin-bottom: 1.5em;
 }
 
 .author {
@@ -74,26 +79,23 @@ p {
 }
 
 .author > img {
-    width: 2rem;
-    height: 2rem;
-    margin-right: 0.75rem;
+    width: 2em;
+    height: 2em;
+    margin-right: 0.75em;
     border-radius: 50%;
 }
-.author > *{
-    margin-right: 0.45rem;
-    font-weight: 800;;
+
+.author > * {
+    margin-right: 0.45em;
+    font-weight: 800;
 }
 
-
-
 .attribution { 
-    font-size: 0.7rem;
+    font-size: 0.7em;
     position: fixed;
-    bottom: 0.5rem;
-    
+    bottom: 0.5em;
 }
 
 .attribution a { 
     color: var(--accent); 
 }
-
